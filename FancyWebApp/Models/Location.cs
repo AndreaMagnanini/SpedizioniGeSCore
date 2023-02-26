@@ -3,9 +3,9 @@ using FancyWebApp.Models.Common;
 
 namespace FancyWebApp.Models;
 /// <summary>
-/// Represents a known place in the world as target of a Formula 1 GP
+/// Represents a known location in the world as target of a Formula 1 GP
 /// </summary>
-public class Locality : UserTrace
+public class Location : UserTrace
 {
     [Key] public Guid? Id { get; set; }
     public string Name { get; set; }

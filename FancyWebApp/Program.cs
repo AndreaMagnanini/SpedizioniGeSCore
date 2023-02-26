@@ -1,9 +1,14 @@
+using FancyWebApp.DataBase;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
+builder.Services.AddDbContext<ShipmentDB>(opt => opt
+    .UseSqlServer(""));
 
 var app = builder.Build();
 
@@ -14,11 +19,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseDeveloperExceptionPage();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseFileServer();
 app.UseRouting();
-
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

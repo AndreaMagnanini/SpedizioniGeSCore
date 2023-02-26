@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using FancyWebApp.Models.Common;
 
 namespace FancyWebApp.Models;
@@ -7,6 +8,7 @@ namespace FancyWebApp.Models;
 /// </summary>
 public class Sigil : UserTrace
 {
+    [Key]
     public Guid Id { get; set; }
     public string Code { get; set; }
 }

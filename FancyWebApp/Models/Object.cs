@@ -12,5 +12,4 @@ public class Object : Item
     public string EnglishDescription { get; set; }
     public string FreightCode { get; set; }
     public int Value { get; set; }
-    public Guid? ContainerId { get; set; }
 }

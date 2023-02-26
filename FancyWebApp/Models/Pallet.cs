@@ -12,7 +12,4 @@ public class Pallet : Item
     public string Name { get; set; }
     public string Description { get; set; }
     public float? Tare { get; set; }
-    public Guid? DestinationId { get; set; }
-    [ForeignKey("DestinationId")]
-    public Locality DestinationLocality { get; set; }
 }
