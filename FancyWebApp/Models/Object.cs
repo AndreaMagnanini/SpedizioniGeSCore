@@ -7,9 +7,13 @@ namespace FancyWebApp.Models;
 /// </summary>
 public class Object : Item
 {
-    [Key] public Guid? Id { get; set; }
-    public string Description { get; set; }
-    public string EnglishDescription { get; set; }
-    public string FreightCode { get; set; }
-    public int Value { get; set; }
+    // [Key] 
+    [Required]
+    public Guid ObjectId { get; set; }
+    [Required]
+    public string Name { get; set; }
+    public string? Description { get; set; }
+    public string? EnglishDescription { get; set; }
+    public string? FreightCode { get; set; }
+    public int? Value { get; set; }
 }

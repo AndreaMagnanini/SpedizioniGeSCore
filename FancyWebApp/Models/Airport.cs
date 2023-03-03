@@ -8,10 +8,12 @@ namespace FancyWebApp.Models;
 /// </summary>
 public class Airport : UserTrace
 {
-    [Key] public string IATACode { get; set; }
+    [Key] 
+    [Required]
+    public string IATACode { get; set; }
+    [Required]
     public string Name { get; set; }
-    public Guid LocationId { get; set; }
-    [ForeignKey("LocationId")]
-    public Location Location { get; set; }
+    [Required]
+    public string City { get; set; }
     public string Description { get; set; }
 }

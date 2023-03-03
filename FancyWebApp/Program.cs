@@ -1,3 +1,4 @@
+using System.Reflection;
 using FancyWebApp.DataBase;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,8 +9,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddDbContext<ShipmentDB>(opt => opt
-    .UseSqlServer(""));
-
+    .UseSqlServer("Server=localhost,1433; User Id=SA; Database=ShipmentDB; Password=MagnaniniA99;TrustServerCertificate=True"));
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

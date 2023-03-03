@@ -9,7 +9,10 @@ namespace FancyWebApp.Models;
 /// </summary>
 public class Box : Item
 {
-    [Key] public Guid? Id { get; set; }
+    // [Key]
+    [Required]
+    public Guid BoxId { get; set; }
+    [Required]
     public string BoxName { get; set; }
     public string Description { get; set; }
 }

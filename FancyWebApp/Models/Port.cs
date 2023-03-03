@@ -5,8 +5,9 @@ namespace FancyWebApp.Models;
 
 public class Port
 {
-    [Key] public string Name { get; set; }
-    public Guid LocationId { get; set; }
-    [ForeignKey("LocationId")]
-    public Location Location { get; set; }
+    [Key] 
+    [Required]
+    public string Name { get; set; }
+    [Required] 
+    public string City { get; set; }
 }

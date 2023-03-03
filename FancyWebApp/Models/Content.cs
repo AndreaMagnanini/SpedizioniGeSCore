@@ -6,18 +6,20 @@ namespace FancyWebApp.Models;
 public class Content
 {
     [Key]
-    public Guid Id { get; set; }
+    [Required]
+    public Guid ContentId { get; set; }
+    [Required]
     public Guid ItemId { get; set; }
     [ForeignKey("ItemId")]
     public Item Item { get; set; }
-    public Guid? SigilIdType { get; set; }
+    public Guid? SigilId { get; set; }
     [ForeignKey("SigilId")]
     public Sigil Sigil { get; set; }
+    [Required]
     public Guid ShipmentId { get; set; }
     [ForeignKey("ShipmentId")] 
     public Shipment Shipment { get; set; }
     public Guid? ContainerId { get; set; }
-    public List<Content> Contents { get; set; }
 }
 
 public enum ContentType

@@ -7,12 +7,14 @@ namespace FancyWebApp.Models;
 /// </summary>
 public class Location : UserTrace
 {
-    [Key] public Guid? Id { get; set; }
+    [Key] 
+    [Required]
+    public Guid Id { get; set; }
+    [Required]
     public string Name { get; set; }
-    public string Address { get; set; }
+    [Required]
     public string Nation { get; set; }
-    public string Phone { get; set; }
-    public string Fax { get; set; }
+    [Required]
     public string City { get; set; }
-    public string Zone { get; set; }
+    public string Address { get; set; }
 }

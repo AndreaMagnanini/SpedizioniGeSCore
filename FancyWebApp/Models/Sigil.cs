@@ -9,6 +9,8 @@ namespace FancyWebApp.Models;
 public class Sigil : UserTrace
 {
     [Key]
+    [Required]
     public Guid Id { get; set; }
+    [Required]
     public string Code { get; set; }
 }

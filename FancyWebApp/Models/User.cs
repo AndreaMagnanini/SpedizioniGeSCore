@@ -6,8 +6,12 @@ namespace FancyWebApp.Models;
 /// </summary>
 public class User
 {
-    [Key] public string UserName { get; set; }
+    [Key] 
+    [Required]
+    public string UserName { get; set; }
+    [Required]
     public string Name { get; set; }
+    [Required]
     public string Surname { get; set; }
     public string Email { get; set; }
     public DateTime? IssueDate { get; set; }

@@ -8,8 +8,11 @@ namespace FancyWebApp.Models;
 /// </summary>
 public class Pallet : Item
 {
-    [Key] public Guid Id { get; set; }
+    // [Key] 
+    [Required]
+    public Guid PalletId { get; set; }
+    [Required]
     public string Name { get; set; }
-    public string Description { get; set; }
+    public string? Description { get; set; }
     public float? Tare { get; set; }
 }
