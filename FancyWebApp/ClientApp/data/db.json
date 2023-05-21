@@ -1,0 +1,74 @@
+{
+  "locations": [
+    {
+      "Id": 1,
+      "Name": "Spa Francorschamps",
+      "Address": "rue de l'automobile 1002",
+      "City": "Spa Francorschamps",
+      "Nation": "Belgium"
+    },
+    {
+      "Id": 2,
+      "Name": "Austin",
+      "Address": "motorsport street 5",
+      "City": "Austin TX",
+      "Nation": "United States of America"
+    },
+    {
+      "Id": 3,
+      "Name": "Monza",
+      "Address": "via del gp di Monza 41",
+      "City": "Monza",
+      "Nation": "Italy"
+    },
+    {
+      "Id": 4,
+      "Name": "Ferrari Spa",
+      "Address": "Via Abetone 13",
+      "City": "Maranello",
+      "Nation": "Italy"
+    }
+  ],
+  "events": [
+    {
+      "Id": 1,
+      "Name": "BelgianGP",
+      "Location": "Spa Francorschamps",
+      "ExtraUE": false,
+      "EventNumber": 15,
+      "StartDate": "2023-08-23T00:00:00.000Z",
+      "EndDate": "2023-08-26T00:00:00.000Z"
+    }
+  ],
+  "shipments": [
+    {
+      "Id": 1,
+      "Code": "BEL",
+      "Event": {
+        "Id": 1,
+        "Name": "BelgianGP",
+        "Location": "Spa Francorschamps",
+        "ExtraUE": false,
+        "EventNumber": 15,
+        "StartDate": "2023-08-23T00:00:00.000Z",
+        "EndDate": "2023-08-26T00:00:00.000Z"
+      },
+      "Origin":  {
+        "Id": 4,
+        "Name": "Ferrari Spa",
+        "Address": "Via Abetone 13",
+        "City": "Maranello",
+        "Nation": "Italy"
+      },
+      "Destination": {
+        "Id": 1,
+        "Name": "Spa Francorschamps",
+        "Address": "rue de l'automobile 1002",
+        "City": "Spa Francorschamps",
+        "Nation": "Belgium"
+      },
+      "Type": "ground",
+      "Status": "scheduled"
+    }
+  ]
+}

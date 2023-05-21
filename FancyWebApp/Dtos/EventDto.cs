@@ -8,7 +8,6 @@ public class EventDto
 {
     public Guid Id { get; set; }
     public string? Description { get; set; }
-    public Guid LocationId { get; set; }
     public Location? Location { get; set; }
     public bool ExtraEU { get; set; }
     public string? Alias { get; set; }

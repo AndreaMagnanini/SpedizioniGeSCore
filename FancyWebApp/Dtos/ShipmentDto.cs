@@ -10,11 +10,8 @@ public class ShipmentDto
     public Guid Id { get; set; }
     public string Code { get; set; }
     public string Description { get; set; }
-    public Guid EventId { get; set; }
     public Event Event { get; set; }
-    public Guid OriginId { get; set; }
     public Location Origin { get; set; }
-    public Guid DestinationId { get; set; }
     public Location Destination { get; set; }
     public DateTime Departure { get; set; }
     public DateTime Arrive { get; set; }
