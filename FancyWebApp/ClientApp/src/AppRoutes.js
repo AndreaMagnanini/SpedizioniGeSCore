@@ -6,7 +6,7 @@ import Shipments from "./pages/Shipments";
 const AppRoutes = [
   {
     index: 1,
-    path: "/home",
+    path: "",
     element: <Home/>
   },
   {

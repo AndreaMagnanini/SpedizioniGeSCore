@@ -1,16 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="be8b0174-970a-47f8-a442-42e4c3010352" name="Changes" comment="" />
+    <list default="true" id="be8b0174-970a-47f8-a442-42e4c3010352" name="Changes" comment="implemented header containing style">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/battery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/cables.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/chassis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/electronic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/engine-min.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/ers.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/ers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/gears.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/mission-winnow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/paper_box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/plane.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scuderia_ferrari_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/scuderia_ferrari_mission_winnow_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/steel_box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/success.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/success_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/suspsnsion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/tools.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/warning-5-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/wheel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/wooden_box.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BasicButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BasicField.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BasicRadio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FerrariHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MissonWinnowIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/FerrariTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Shipments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Shipments.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LW4946AVsr8PSasrUaLaf7wa5E" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -20,14 +81,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/andrea/Scrivania/WebDev/FancyWebApp/FancyWebApp/ClientApp",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/andrea/Scrivania/WebDev/react-hero",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.HTML",
+    "ts.external.directory.path": "/home/andrea/Scrivania/WebDev/FancyWebApp/FancyWebApp/ClientApp/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/styles" />
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -49,10 +120,25 @@
       <option name="presentableId" value="Default" />
       <updated>1675973349594</updated>
       <workItem from="1675973350856" duration="233000" />
+      <workItem from="1678137381233" duration="282000" />
+      <workItem from="1678137678813" duration="12820000" />
+      <workItem from="1679077303099" duration="2492000" />
+      <workItem from="1681465077632" duration="831000" />
+      <workItem from="1681644163728" duration="13000" />
+      <workItem from="1684438265126" duration="2019000" />
+      <workItem from="1684606246556" duration="1219000" />
+      <workItem from="1684954232231" duration="153000" />
+      <workItem from="1685048837680" duration="20903000" />
+      <workItem from="1685395445280" duration="16000" />
+      <workItem from="1685395476488" duration="8158000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implemented header containing style" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented header containing style" />
   </component>
 </project>
