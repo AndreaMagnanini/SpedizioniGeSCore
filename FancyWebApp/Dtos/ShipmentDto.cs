@@ -12,6 +12,8 @@ public class ShipmentDto
     public string Description { get; set; }
     public Event Event { get; set; }
     public Location Origin { get; set; }
+    public Airport OriginAirport { get; set; }
+    public Airport DestionationAiport { get; set; }
     public Location Destination { get; set; }
     public DateTime Departure { get; set; }
     public DateTime Arrive { get; set; }

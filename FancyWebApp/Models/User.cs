@@ -10,9 +10,12 @@ public class User
     [Required]
     public string UserName { get; set; }
     [Required]
+    public string HashedPassword { get; set; }
+    [Required]
     public string Name { get; set; }
     [Required]
     public string Surname { get; set; }
+    public byte[] Salt { get; set; }
     public string Email { get; set; }
     public DateTime? IssueDate { get; set; }
     public DateTime? ExpiryDate { get; set; }

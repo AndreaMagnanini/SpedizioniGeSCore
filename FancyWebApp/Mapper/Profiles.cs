@@ -32,5 +32,7 @@ public class Profiles : Profile
         CreateMap<ContentDto, Content>();
         CreateMap<Sigil, SigilDto>();
         CreateMap<SigilDto, Sigil>();
+        CreateMap<Camion, CamionDto>();
+        CreateMap<CamionDto, Camion>();
     }
 }
