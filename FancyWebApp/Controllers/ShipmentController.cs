@@ -30,6 +30,20 @@ public class ShipmentController : ControllerBase
         }
     }
     
+    [HttpGet("{year:int}")]
+    public async Task<ActionResult<List<ShipmentDto>>> Get(int year)
+    {
+        try
+        {
+            var shipments = await this._shipmentService.GetByYear(year);
+            return this.Ok(shipments);
+        }
+        catch (Exception ex)
+        {
+            return this.Problem(ex.Message);
+        }
+    }
+    
     [HttpPost]
     public async Task<ActionResult<ShipmentDto>> Post([FromBody] ShipmentDto shipmentDto)
     {

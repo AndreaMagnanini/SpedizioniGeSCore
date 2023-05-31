@@ -20,13 +20,22 @@ public class ShipmentService : IShipmentService
     public async Task<List<ShipmentDto>> Get()
     {
         var shipments = await this._shipmentRepository.Get();
-        return shipments.Select(s => this._mapper.Map<ShipmentDto>(s)).ToList();
+        var result = shipments.Select(s => this._mapper.Map<ShipmentDto>(s)).ToList();
+        return result ?? new List<ShipmentDto>();
     }
 
+    public async Task<List<ShipmentDto>> GetByYear(int year)
+    {
+        var shipments = await this._shipmentRepository.GetByYear(year);
+        var result = shipments.Select(s => this._mapper.Map<ShipmentDto>(s)).ToList();
+        return result ?? new List<ShipmentDto>();
+    }
     public async Task<ShipmentDto> Post(ShipmentDto shipmentDto)
     {
         var shipment = this._mapper.Map<Shipment>(shipmentDto);
         await this._shipmentRepository.Post(shipment);
         return shipmentDto;
     }
+
+    
 }

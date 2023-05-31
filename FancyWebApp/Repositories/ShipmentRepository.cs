@@ -15,6 +15,10 @@ public class ShipmentRepository : IShipmentRepository
     }
 
     public async Task<List<Shipment>> Get() => await this._db.Shipments.ToListAsync();
+
+    public async Task<List<Shipment>> GetByYear(int year) =>
+        await this._db.Shipments.Where(s => s.CreationDate.Date.Year == year).ToListAsync();
+
     public async Task Post(Shipment shipment)
     {
         await this._db.Shipments.AddAsync(shipment);
