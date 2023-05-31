@@ -6,7 +6,6 @@ namespace FancyWebApp.Dtos;
 /// </summary>
 public class ContentDto
 {
-    public Guid ContentId { get; set; }
     public Item Item { get; set; }
     public Sigil Sigil { get; set; }
     public Guid ShipmentId { get; set; }

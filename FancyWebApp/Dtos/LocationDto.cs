@@ -4,7 +4,6 @@ namespace FancyWebApp.Dtos;
 /// </summary>
 public class LocationDto
 {
-    public Guid Id { get; set; }
     public string Name { get; set; }
     public string Address { get; set; }
     public string Nation { get; set; }

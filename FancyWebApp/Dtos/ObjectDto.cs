@@ -4,7 +4,6 @@ namespace FancyWebApp.Dtos;
 /// </summary>
 public class ObjectDto
 {
-    public Guid ObjectId { get; set; }
     public string Description { get; set; }
     public string EnglishDescription { get; set; }
     public string FreightCode { get; set; }

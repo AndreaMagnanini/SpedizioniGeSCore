@@ -6,7 +6,6 @@ namespace FancyWebApp.Dtos;
 /// </summary>
 public class ItemDto
 {
-    public Guid Id { set; get; }
     public int Height { get; set; }
     public int Width { get; set; }
     public int Depth { get; set; }

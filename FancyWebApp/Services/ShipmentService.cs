@@ -33,6 +33,7 @@ public class ShipmentService : IShipmentService
     public async Task<ShipmentDto> Post(ShipmentDto shipmentDto)
     {
         var shipment = this._mapper.Map<Shipment>(shipmentDto);
+        shipment.Id = Guid.NewGuid();
         await this._shipmentRepository.Post(shipment);
         return shipmentDto;
     }

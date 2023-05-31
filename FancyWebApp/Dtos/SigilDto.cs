@@ -4,6 +4,5 @@ namespace FancyWebApp.Dtos;
 /// </summary>
 public class SigilDto
 {
-    public Guid Id { get; set; }
     public string Code { get; set; }
 }

@@ -6,7 +6,6 @@ namespace FancyWebApp.Dtos;
 /// </summary>
 public class EventDto
 {
-    public Guid Id { get; set; }
     public string? Description { get; set; }
     public Location? Location { get; set; }
     public bool ExtraEU { get; set; }

@@ -7,7 +7,6 @@ namespace FancyWebApp.Dtos;
 /// </summary>
 public class ShipmentDto
 {
-    public Guid Id { get; set; }
     public string Code { get; set; }
     public string Description { get; set; }
     public Event Event { get; set; }
