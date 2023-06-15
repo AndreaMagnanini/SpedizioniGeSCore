@@ -7,7 +7,7 @@ namespace FancyWebApp.Dtos;
 public class EventDto
 {
     public string? Description { get; set; }
-    public Location? Location { get; set; }
+    public LocationDto? Location { get; set; }
     public bool ExtraEU { get; set; }
     public string? Alias { get; set; }
     public int? EventNumber { get; set; }

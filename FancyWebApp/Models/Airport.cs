@@ -15,5 +15,5 @@ public class Airport : UserTrace
     public string Name { get; set; }
     [Required]
     public string City { get; set; }
-    public string Description { get; set; }
+    public string? Description { get; set; }
 }

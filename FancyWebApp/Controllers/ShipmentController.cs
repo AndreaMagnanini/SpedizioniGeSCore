@@ -1,6 +1,7 @@
 using FancyWebApp.Dtos;
 using FancyWebApp.Exceptions;
 using FancyWebApp.Interfaces.Services;
+using FancyWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FancyWebApp.Controllers;
@@ -10,6 +11,66 @@ namespace FancyWebApp.Controllers;
 public class ShipmentController : ControllerBase
 {
     private readonly IShipmentService _shipmentService;
+
+    private readonly List<ShipmentDto> _shipmentDtos = new ()
+    {
+        new ShipmentDto
+        {
+            Code = "AUS",
+            Description = "Air Shipment to Australian GP",
+            Event = new EventDto
+            {
+                Description = "Australian GP 2023",
+                Location = new LocationDto
+                {
+                    Name = "Albert Park Street Circuit",
+                    Address = "Albert Park str 1",
+                    Nation = "Australia",
+                    City = "Melburne"
+                },
+                ExtraEU = true,
+                Alias = "AUSGP",
+                EventNumber = 3,
+                Start = new DateTime(2023, 3, 25),
+                End = new DateTime(2023, 3, 27)
+            },
+            Origin = new LocationDto
+            {
+                Name = "Ferrari S.p.A.",
+                Address = "Via Ascari 110",
+                Nation = "Italy",
+                City = "Maranello"
+            },
+            OriginAirport = new Airport
+            {
+                CreationDate = DateTime.Today,
+                IATACode = "BLQ",
+                Name = "Guglielmo Marconi Airport",
+                City = "Bologna",
+                Description = null
+            },
+            DestionationAiport = new Airport
+            {
+                CreationDate = DateTime.Today,
+                IATACode = "MQB",
+                Name = "Melburne International Airport Oceania",
+                City = "Melburne",
+                Description = null
+            },
+            Destination = new LocationDto
+            {
+                Name = "Albert Park Street Circuit",
+                Address = "Albert Park str 1",
+                Nation = "Australia",
+                City = "Melburne"
+            },
+            Departure = DateTime.Today,
+            Arrive = DateTime.Today,
+            Contents = new List<ContentDto>(),
+            Type = ShipmentType.Air,
+            Status = ShimpentStatus.Scheduled
+        }
+    };
 
     public ShipmentController(IShipmentService shipmentService)
     {
@@ -21,8 +82,9 @@ public class ShipmentController : ControllerBase
     {
         try
         {
-            var shipments = await this._shipmentService.Get();
-            return this.Ok(shipments);
+            // var shipments = await this._shipmentService.Get();
+            // return this.Ok(shipments);
+            return Ok(this._shipmentDtos);
         }
         catch (Exception ex)
         {
@@ -35,8 +97,9 @@ public class ShipmentController : ControllerBase
     {
         try
         {
-            var shipments = await this._shipmentService.GetByYear(year);
-            return this.Ok(shipments);
+            // var shipments = await this._shipmentService.GetByYear(year);
+            // return this.Ok(shipments);
+            return Ok(this._shipmentDtos);
         }
         catch (Exception ex)
         {

@@ -7,22 +7,22 @@ const AppRoutes = [
   {
     index: 1,
     path: "",
-    element: <Home/>
+    element: <Home year={2023}/>
   },
   {
     index: 2,
     path: "/shipments",
-    element: <Shipments/>
+    element: <Shipments year={2023}/>
   },
   {
     index: 3,
     path: "/events",
-    element: <Events/>
+    element: <Events year={2023}/>
   },
   {
     index: 4,
     path: "/locations",
-    element: <Locations/>
+    element: <Locations year={2023}/>
   }
 ];
 

@@ -17,3 +17,12 @@ export default function App () {
         </BrowserRouter>
     )
 }
+
+// TODO:
+// - provare gradients;
+// - rimettere su DB;
+// - applicare nuove migrations;
+// - loader lineare;
+// - loader circolare;
+// - popolare dati card;
+// - fetchare utente;

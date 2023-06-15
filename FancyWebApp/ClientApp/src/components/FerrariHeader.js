@@ -200,7 +200,7 @@ function FerrariHeader({children}) {
             </AppBar>
         </div>
             <div className={classes.page}>
-                {children}
+                {React.cloneElement(children, {year: season})}
             </div>
         </ThemeProvider>
     );

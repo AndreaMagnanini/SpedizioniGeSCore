@@ -5,50 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be8b0174-970a-47f8-a442-42e4c3010352" name="Changes" comment="implemented header containing style">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/battery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/cables.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/chassis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/electronic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/engine-min.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/ers.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/ers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/gears.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/mission-winnow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/paper_box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/plane.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scuderia_ferrari_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/scuderia_ferrari_mission_winnow_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/steel_box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/success_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/suspsnsion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/tools.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/uld_type_4.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/warning-5-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/wheel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/wooden_box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BasicButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BasicField.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BasicRadio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FerrariHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MissonWinnowIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/FerrariTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../FancyWebApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../FancyWebApp.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FerrariHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FerrariHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Shipments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Shipments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupProxy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/FerrariTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/FerrariTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Controllers/ShipmentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Controllers/ShipmentController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dtos/EventDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Dtos/EventDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dtos/ShipmentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Dtos/ShipmentDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Models/Airport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Models/Airport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Services/ShipmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Services/ShipmentService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -76,23 +48,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/andrea/Scrivania/WebDev/react-hero",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.HTML",
-    "ts.external.directory.path": "/home/andrea/Scrivania/WebDev/FancyWebApp/FancyWebApp/ClientApp/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/andrea/Scrivania/Webion/khub&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.HTML&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/andrea/Scrivania/WebDev/FancyWebApp/FancyWebApp/ClientApp/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/styles" />
@@ -130,8 +102,20 @@
       <workItem from="1684954232231" duration="153000" />
       <workItem from="1685048837680" duration="20903000" />
       <workItem from="1685395445280" duration="16000" />
-      <workItem from="1685395476488" duration="8158000" />
+      <workItem from="1685395476488" duration="27614000" />
+      <workItem from="1686318887988" duration="2547000" />
+      <workItem from="1686390736367" duration="181000" />
+      <workItem from="1686392150492" duration="54000" />
+      <workItem from="1686817471417" duration="599000" />
     </task>
+    <task id="LOCAL-00001" summary="implemented header containing style">
+      <created>1685403680696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685403680696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

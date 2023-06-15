@@ -65,7 +65,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseDeveloperExceptionPage();
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseFileServer();
 app.UseRouting();
@@ -73,7 +73,7 @@ app.UseSession();
 app.UseAuthentication();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Access}/{action=Login}/{id?}");
+    pattern: "{controller}/{action}");
 
 app.MapFallbackToFile("index.html");
 ;
