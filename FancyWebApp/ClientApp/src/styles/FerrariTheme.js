@@ -1,6 +1,28 @@
 import { createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
+    overrides: {
+        MuiCssBaseline: {
+            '@global': {
+                body: {
+                    backgroundColor: "#212121",
+                    margin: "0px"
+                },
+                '*::-webkit-scrollbar': {
+                    width: "8px",
+                    height: "8px",
+                },
+                '*::-webkit-scrollbar-track': {
+                    backgroundColor: "#eeeeee",
+                    borderRadius: "4px"
+                },
+                '*::-webkit-scrollbar-thumb':{
+                    backgroundColor: "#D41217",
+                    borderRadius: "4px"
+                }
+            },
+        },
+    },
     palette: {
         primary: {
             main: "#D41217",
@@ -12,6 +34,9 @@ const theme = createTheme({
             primary: "#212121",
             secondary: "#fafafa",
             hint: "#D41217"
+        },
+        background: {
+            default: "#212121"
         }
     },
     typography: {

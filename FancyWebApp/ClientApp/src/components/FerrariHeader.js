@@ -8,7 +8,7 @@ import {
     MenuItem,
     Toolbar,
     Typography,
-    ThemeProvider
+    ThemeProvider, CssBaseline
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core";
 import MissonWinnowIcon from "./MissonWinnowIcon";
@@ -44,11 +44,12 @@ const useStyles = makeStyles({
     },
     appbar: {
         alignItems: "center",
+        height: "60px",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         width: '100%',
-        color: "primary",
+        background: "linear-gradient(90deg, rgba(231,14,14,1) 0%, rgba(165,22,22,1) 66%)",
         position: "fixed",
     },
     toolbar: {
@@ -56,7 +57,10 @@ const useStyles = makeStyles({
         alignItems: "center",
     },
     page:{
-        marginTop: "70px",
+        display: "block",
+        width: "100%",
+        height: "100%",
+        marginTop: "60px",
         backgroundColor: "#212121"
     },
     logo:{
@@ -100,9 +104,10 @@ const useStyles = makeStyles({
     drawer:{
     },
     paper:{
+        flexDirection: "column",
         width: `300px`,
         background: "#212121",
-        top: "70px"
+        top: "60px"
     }
 })
 
@@ -134,6 +139,7 @@ function FerrariHeader({children}) {
     const availableSeasons = [2023, 2022, 2021];
     return (
         <ThemeProvider theme={FerrariTheme}>
+            <CssBaseline />
         <div className={classes.root}>
             <AppBar className={classes.appbar} open={open}
                     s>

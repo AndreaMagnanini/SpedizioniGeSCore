@@ -1,6 +1,7 @@
 import {Event} from './Event';
 import {Location} from "./Location";
-export interface Shipment{
+export class Shipment{
+    Id: number;
     Code: string;
     Description: string;
     Event: Event;
