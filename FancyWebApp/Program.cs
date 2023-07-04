@@ -1,4 +1,3 @@
-using System.Reflection;
 using FancyWebApp.DataBase;
 using FancyWebApp.Interfaces.Repositories;
 using FancyWebApp.Interfaces.Services;
@@ -47,7 +46,7 @@ builder.Services.Configure<PasswordHasherOptions>(opt =>
 
 builder.Services.Configure<SecurityStampValidatorOptions>(opt => opt.ValidationInterval = TimeSpan.FromMinutes(1));
 builder.Services.AddDbContext<ShipmentDB>(opt => opt
-    .UseSqlServer("Server=localhost,1433; User Id=SA; Database=ShipmentDB; Password=MagnaniniA99;TrustServerCertificate=True"));
+    .UseSqlServer("Server=ANDREA-XPS; Database=Shipments; Initial Catalog=Shipments;Integrated Security=SSPI; TrustServerCertificate=True")); // Server=localhost,1433; User Id=SA; Database=Shipment; Password=MagnaniniA99;TrustServerCertificate=True
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -65,7 +64,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseDeveloperExceptionPage();
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseFileServer();
 app.UseRouting();
@@ -76,6 +75,5 @@ app.MapControllerRoute(
     pattern: "{controller}/{action}");
 
 app.MapFallbackToFile("index.html");
-;
 
 app.Run();

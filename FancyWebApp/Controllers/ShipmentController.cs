@@ -41,17 +41,121 @@ public class ShipmentController : ControllerBase
                 Nation = "Italy",
                 City = "Maranello"
             },
-            OriginAirport = new Airport
+            OriginPort = new PortDto
             {
-                CreationDate = DateTime.Today,
+                Name = "Genova International Port Area",
+                City = "Genova",
+                Description = null
+            },
+            DestinationPort = new PortDto()
+            {
+                Name = "Sidney Harbour Inc",
+                City = "Sidney",
+                Description = null
+            },
+            Destination = new LocationDto
+            {
+                Name = "Albert Park Street Circuit",
+                Address = "Albert Park str 1",
+                Nation = "Australia",
+                City = "Melburne"
+            },
+            Departure = DateTime.Today,
+            Arrive = DateTime.Today,
+            Contents = new List<ContentDto>(),
+            Type = ShipmentType.Ferry,
+            Status = ShimpentStatus.Scheduled
+        },
+        new ShipmentDto
+        {
+            Code = "AUS",
+            Description = "Air Shipment to Australian GP",
+            Event = new EventDto
+            {
+                Description = "Australian GP 2023",
+                Location = new LocationDto
+                {
+                    Name = "Albert Park Street Circuit",
+                    Address = "Albert Park str 1",
+                    Nation = "Australia",
+                    City = "Melburne"
+                },
+                ExtraEU = true,
+                Alias = "AUSGP",
+                EventNumber = 3,
+                Start = new DateTime(2023, 3, 25),
+                End = new DateTime(2023, 3, 27)
+            },
+            Origin = new LocationDto
+            {
+                Name = "Ferrari S.p.A.",
+                Address = "Via Ascari 110",
+                Nation = "Italy",
+                City = "Maranello"
+            },
+            OriginAirport = new AirportDto
+            {
                 IATACode = "BLQ",
                 Name = "Guglielmo Marconi Airport",
                 City = "Bologna",
                 Description = null
             },
-            DestionationAiport = new Airport
+            DestinationAirport = new AirportDto
             {
-                CreationDate = DateTime.Today,
+                IATACode = "MQB",
+                Name = "Melburne International Airport Oceania",
+                City = "Melburne",
+                Description = null
+            },
+            Destination = new LocationDto
+            {
+                Name = "Albert Park Street Circuit",
+                Address = "Albert Park str 1",
+                Nation = "Australia",
+                City = "Melburne"
+            },
+            Departure = DateTime.Today,
+            Arrive = DateTime.Today,
+            Contents = new List<ContentDto>(),
+            Type = ShipmentType.Ground,
+            Status = ShimpentStatus.Scheduled
+        },
+        new ShipmentDto
+        {
+            Code = "AUS",
+            Description = "Air Shipment to Australian GP",
+            Event = new EventDto
+            {
+                Description = "Australian GP 2023",
+                Location = new LocationDto
+                {
+                    Name = "Albert Park Street Circuit",
+                    Address = "Albert Park str 1",
+                    Nation = "Australia",
+                    City = "Melburne"
+                },
+                ExtraEU = true,
+                Alias = "AUSGP",
+                EventNumber = 3,
+                Start = new DateTime(2023, 3, 25),
+                End = new DateTime(2023, 3, 27)
+            },
+            Origin = new LocationDto
+            {
+                Name = "Ferrari S.p.A.",
+                Address = "Via Ascari 110",
+                Nation = "Italy",
+                City = "Maranello"
+            },
+            OriginAirport = new AirportDto
+            {
+                IATACode = "BLQ",
+                Name = "Guglielmo Marconi Airport",
+                City = "Bologna",
+                Description = null
+            },
+            DestinationAirport = new AirportDto
+            {
                 IATACode = "MQB",
                 Name = "Melburne International Airport Oceania",
                 City = "Melburne",
