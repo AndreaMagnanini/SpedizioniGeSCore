@@ -9,10 +9,9 @@ namespace FancyWebApp.Models;
 public class Pallet : Item
 {
     // [Key] 
+    //[Required]
+    //public Guid PalletId { get; set; }
     [Required]
-    public Guid PalletId { get; set; }
-    [Required]
-    public string Name { get; set; }
-    public string? Description { get; set; }
-    public float? Tare { get; set; }
+    public string PalletCode { get; set; }
+    //public string? PalletDescription { get; set; }
 }

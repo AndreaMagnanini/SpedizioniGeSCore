@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FancyWebApp.Models;
 /// <summary>
@@ -8,12 +9,15 @@ namespace FancyWebApp.Models;
 public class Object : Item
 {
     // [Key] 
+    //[Required]
+    //public Guid ObjectId { get; set; }
+    //[Required]
+    //public string ObjectName { get; set; }
+    //public string? ObjectDescription { get; set; }
     [Required]
-    public Guid ObjectId { get; set; }
+    public string? Code { get; set; }
+    [ForeignKey("Code")]
+    public HsCode HsCode { get; set; }
     [Required]
-    public string Name { get; set; }
-    public string? Description { get; set; }
-    public string? EnglishDescription { get; set; }
-    public string? FreightCode { get; set; }
-    public int? Value { get; set; }
+    public int Value { get; set; }
 }

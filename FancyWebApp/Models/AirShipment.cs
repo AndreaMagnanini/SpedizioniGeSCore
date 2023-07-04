@@ -7,11 +7,11 @@ namespace FancyWebApp.Models;
 public class AirShipment : Shipment
 {
     [Required]
-    public string OriginAirportIATACode { get; set; }
-    [ForeignKey("OriginAirportIATACode")]
+    public Guid OriginAirportId { get; set; }
+    [ForeignKey("OriginAirportId")]
     public Airport OriginAirport { get; set; }
     [Required]
-    public string DestinationAirportIATACode { get; set; }
-    [ForeignKey("DestinationAirportIATACode")]
+    public Guid DestinationAirportId { get; set; }
+    [ForeignKey("DestinationAirportId")]
     public Airport DestinationAirport { get; set; }
 }

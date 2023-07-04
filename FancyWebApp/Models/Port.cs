@@ -1,13 +1,18 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using FancyWebApp.Models.Common;
 
 namespace FancyWebApp.Models;
 
-public class Port
+public class Port : UserTrace
 {
-    [Key] 
+    [Key]
+    [Required]
+    public Guid Id { get; set; }
+    [Required]
+    public string LoCode { get; set; }
     [Required]
     public string Name { get; set; }
-    [Required] 
+    [Required]
     public string City { get; set; }
+    public string? Description { get; set; }
 }

@@ -6,11 +6,11 @@ namespace FancyWebApp.Models;
 public class FerryShipment : Shipment
 {
     [Required]
-    public string OriginPortName { get; set; }
-    [ForeignKey("OriginPortName")]
+    public Guid OriginPortId { get; set; }
+    [ForeignKey("OriginPortId")]
     public Port OriginPort { get; set; }
     [Required]
-    public string DestinationPortName { get; set; }
-    [ForeignKey("DestinationPortName")]
+    public Guid DestinationPortId { get; set; }
+    [ForeignKey("DestinationPortId")]
     public Port DestinationPort { get; set; }
 }

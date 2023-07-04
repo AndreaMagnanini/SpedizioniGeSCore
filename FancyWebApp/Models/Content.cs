@@ -12,6 +12,8 @@ public class Content
     public Guid ItemId { get; set; }
     [ForeignKey("ItemId")]
     public Item Item { get; set; }
+    [Required]
+    public int Quantity { get; set; }
     public Guid? SigilId { get; set; }
     [ForeignKey("SigilId")]
     public Sigil Sigil { get; set; }
@@ -20,6 +22,7 @@ public class Content
     [ForeignKey("ShipmentId")] 
     public Shipment Shipment { get; set; }
     public Guid? ContainerId { get; set; }
+
 }
 
 public enum ContentType

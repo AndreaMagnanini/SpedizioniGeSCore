@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using FancyWebApp.Models.Common;
 
 namespace FancyWebApp.Models;

@@ -22,4 +22,5 @@ public class Event : UserTrace
     public int? EventNumber { get; set; }
     public DateTime? Start { get; set; }
     public DateTime? End { get; set; }
+
 }   
