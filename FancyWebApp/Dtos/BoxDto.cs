@@ -2,8 +2,7 @@ namespace FancyWebApp.Dtos;
 /// <summary>
 /// Data Transfer Object for entity Box
 /// </summary>
-public class BoxDto
+public class BoxDto : ItemDto
 {
-    public string BoxName { get; set; }
-    public string Description { get; set; }
+    public string BoxNumber { get; set; }
 }

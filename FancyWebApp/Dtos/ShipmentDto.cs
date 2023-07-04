@@ -11,8 +11,10 @@ public class ShipmentDto
     public string Description { get; set; }
     public EventDto Event { get; set; }
     public LocationDto Origin { get; set; }
-    public Airport OriginAirport { get; set; }
-    public Airport DestionationAiport { get; set; }
+    public AirportDto? OriginAirport { get; set; }
+    public AirportDto? DestinationAirport { get; set; }
+    public PortDto? OriginPort { get; set; }
+    public PortDto? DestinationPort { get; set; }
     public LocationDto Destination { get; set; }
     public DateTime Departure { get; set; }
     public DateTime Arrive { get; set; }
