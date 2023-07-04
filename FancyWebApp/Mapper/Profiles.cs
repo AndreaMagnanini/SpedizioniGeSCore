@@ -34,5 +34,8 @@ public class Profiles : Profile
         CreateMap<SigilDto, Sigil>();
         CreateMap<Camion, CamionDto>();
         CreateMap<CamionDto, Camion>();
+        CreateMap<Airport, AirportDto>();
+        CreateMap<Port, PortDto>();
+        CreateMap<HsCode, HsCodeDto>();
     }
 }
