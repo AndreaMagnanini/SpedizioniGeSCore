@@ -49,10 +49,20 @@ builder.Services.AddDbContext<ShipmentDB>(opt => opt
     .UseSqlServer("Server=ANDREA-XPS; Database=Shipments; Initial Catalog=Shipments;Integrated Security=SSPI; TrustServerCertificate=True")); // Server=localhost,1433; User Id=SA; Database=Shipment; Password=MagnaniniA99;TrustServerCertificate=True
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+// Services
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IShipmentRepository, ShipmentRepository>();
 builder.Services.AddScoped<IShipmentService, ShipmentService>();
+builder.Services.AddScoped<ILocationService, LocationService>();
+builder.Services.AddScoped<IAirportService, AirportService>();
+builder.Services.AddScoped<IPortService, PortService>();
+
+// Repositories
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IShipmentRepository, ShipmentRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IAirportRepository, AirportRepository>();
+builder.Services.AddScoped<IPortRepository, PortRepository>();
 
 var app = builder.Build();
 

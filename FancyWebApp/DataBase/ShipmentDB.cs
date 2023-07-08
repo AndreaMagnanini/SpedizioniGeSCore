@@ -124,35 +124,7 @@ public class ShipmentDB : DbContext
                 Name = "Haas F1 Team"
             });
 
-        modelBuilder.Entity<Location>()
-            .HasData(
-                new Location
-                {
-                    CreationDate = DateTime.Now,
-                    CreationUser = "amagnanini",
-                    UpdatingDate = null,
-                    UpdatingUSer = null,
-                    DeletionDate = null,
-                    DeletionUser = null,
-                    Id = Guid.NewGuid(),
-                    Name = "Ferrari Spa",
-                    Address = "Via Abetone 103",
-                    Nation = "Italy",
-                    City = "Maranello",
-                },new Location
-                {
-                    CreationDate = DateTime.Now,
-                    CreationUser = "amagnanini",
-                    UpdatingDate = null,
-                    UpdatingUSer = null,
-                    DeletionDate = null,
-                    DeletionUser = null,
-                    Id = locationGuid,
-                    Name = "Barahin - Shaqir Circuit",
-                    Address = "Shaqir Circuit street 109",
-                    Nation = "Barahin",
-                    City = "Shaqir",
-                });
+        
                 modelBuilder.Entity<Event>().HasData(new Event
                 {
                     CreationDate = DateTime.Now,
@@ -234,38 +206,6 @@ public class ShipmentDB : DbContext
                     Description = "Gearbox and related",
                 });
 
-        modelBuilder.Entity<Airport>()
-            .HasData(
-                new Airport
-                {
-                    Id= Guid.NewGuid(),
-                    CreationDate = DateTime.Now,
-                    CreationUser = "amagnanini",
-                    UpdatingDate = null,
-                    UpdatingUSer = null,
-                    DeletionDate = null,
-                    DeletionUser = null,
-                    IATACode = "BAH",
-                    City= "Shaqir",
-                    Name = "Saqir International Airport",
-                    Description = "Airport nearby Saqir - Barahin"
-                });
-        
-        modelBuilder.Entity<Port>()
-            .HasData(new Port
-            {
-                Id = Guid.NewGuid(),
-                LoCode = "BHIR",
-                CreationDate = DateTime.Now,
-                CreationUser = "amagnanini",
-                UpdatingDate = null,
-                UpdatingUSer = null,
-                DeletionDate = null,
-                DeletionUser = null,
-                Name = "Barahin International Harbour",
-                City = "Shaqir",
-                Description = "Port nearby Saqir - Barahin"
-            });
 
         modelBuilder.Entity<HsCode>()
             .HasData(new HsCode
