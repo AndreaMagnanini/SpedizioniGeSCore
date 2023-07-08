@@ -13,6 +13,6 @@ public class Port : UserTrace
     [Required]
     public string Name { get; set; }
     [Required]
-    public string City { get; set; }
+    public string Country { get; set; }
     public string? Description { get; set; }
 }
