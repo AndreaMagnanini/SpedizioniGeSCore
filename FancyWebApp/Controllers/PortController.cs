@@ -34,7 +34,7 @@ namespace FancyWebApp.Controllers
             }
         }
 
-        [HttpGet("{guid:id}")]
+        [HttpGet("{id:Guid}")]
         public async Task<ActionResult<PortDto>> Get(Guid id)
         {
             try

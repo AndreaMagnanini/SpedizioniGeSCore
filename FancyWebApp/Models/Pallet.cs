@@ -1,17 +1,20 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+// <copyright file="Pallet.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-namespace FancyWebApp.Models;
-
-/// <summary>
-/// Represents a Cargo Pallet, capable to contain both boxes and floating objects
-/// </summary>
-public class Pallet : Item
+namespace FancyWebApp.Models
 {
-    // [Key] 
-    //[Required]
-    //public Guid PalletId { get; set; }
-    [Required]
-    public string PalletCode { get; set; }
-    //public string? PalletDescription { get; set; }
+    using System.ComponentModel.DataAnnotations;
+
+    /// <summary>
+    /// Represents a Cargo Pallet, capable to contain both boxes and floating objects.
+    /// </summary>
+    public class Pallet : Item
+    {
+        /// <summary>
+        /// Gets or sets the pallet code field.
+        /// </summary>
+        [Required]
+        public string PalletCode { get; set; }
+    }
 }

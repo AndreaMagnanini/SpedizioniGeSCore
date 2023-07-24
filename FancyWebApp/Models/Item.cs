@@ -22,6 +22,8 @@ public abstract class Item : UserTrace
     public ItemType Type { get; set; }
     [Required]
     public int Availability { get; set; }
+    [Required]
+    public int Quantity { get; set; }
 }
 
 public enum ItemType

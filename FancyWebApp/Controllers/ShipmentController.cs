@@ -64,7 +64,7 @@ public class ShipmentController : ControllerBase
             Arrive = DateTime.Today,
             Contents = new List<ContentDto>(),
             Type = ShipmentType.Ferry,
-            Status = ShimpentStatus.Scheduled
+            Status = ShipmentStatus.Scheduled
         },
         new ShipmentDto
         {
@@ -118,7 +118,7 @@ public class ShipmentController : ControllerBase
             Arrive = DateTime.Today,
             Contents = new List<ContentDto>(),
             Type = ShipmentType.Ground,
-            Status = ShimpentStatus.Scheduled
+            Status = ShipmentStatus.Scheduled
         },
         new ShipmentDto
         {
@@ -172,7 +172,7 @@ public class ShipmentController : ControllerBase
             Arrive = DateTime.Today,
             Contents = new List<ContentDto>(),
             Type = ShipmentType.Air,
-            Status = ShimpentStatus.Scheduled
+            Status = ShipmentStatus.Scheduled
         }
     };
 
@@ -196,7 +196,7 @@ public class ShipmentController : ControllerBase
         }
     }
     
-    [HttpGet("{year:int}")]
+    [Route(("{year:int}"))]
     public async Task<ActionResult<List<ShipmentDto>>> Get(int year)
     {
         try

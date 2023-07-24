@@ -1,27 +1,44 @@
-﻿using System.Data.Entity;
-using FancyWebApp.DataBase;
-using FancyWebApp.Interfaces.Repositories;
-using FancyWebApp.Models;
+﻿// <copyright file="PortRepository.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace FancyWebApp.Repositories
 {
+    using FancyWebApp.DataBase;
+    using FancyWebApp.Interfaces.Repositories;
+    using FancyWebApp.Models;
+    using Microsoft.EntityFrameworkCore;
+
+    /// <summary>
+    /// The repository linked to port entity.
+    /// </summary>
     public class PortRepository : IPortRepository
     {
-        private readonly ShipmentDB _db;
+        /// <summary>
+        /// The shipment db instance.
+        /// </summary>
+        private readonly ShipmentDb db;
 
-        public PortRepository(ShipmentDB db)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PortRepository"/> class.
+        /// </summary>
+        /// <param name="db">The shipment db instance.</param>
+        public PortRepository(ShipmentDb db)
         {
-            _db = db;
+            this.db = db;
         }
 
+
+        /// <inheritdoc/>
         public async Task<List<Port>> Get()
         {
-            return await this._db.Ports.ToListAsync();
+            return await this.db.Ports.ToListAsync();
         }
 
-        public async Task<Port> Get(Guid id)
+        /// <inheritdoc/>
+        public async Task<Port?> Get(Guid id)
         {
-            return await this._db.Ports.FirstOrDefaultAsync(p => p.Id == id);
+            return await this.db.Ports.FirstOrDefaultAsync(p => p.Id == id);
         }
     }
 }

@@ -1,27 +1,43 @@
-﻿using System.Data.Entity;
-using FancyWebApp.DataBase;
-using FancyWebApp.Interfaces.Repositories;
-using FancyWebApp.Models;
+﻿// <copyright file="AirportRepository.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace FancyWebApp.Repositories
 {
+    using FancyWebApp.DataBase;
+    using FancyWebApp.Interfaces.Repositories;
+    using FancyWebApp.Models;
+    using Microsoft.EntityFrameworkCore;
+
+    /// <summary>
+    /// The repository linked to airport entity.
+    /// </summary>
     public class AirportRepository : IAirportRepository
     {
-        private readonly ShipmentDB _db;
+        /// <summary>
+        /// The shipment db instance.
+        /// </summary>
+        private readonly ShipmentDb db;
 
-        public AirportRepository(ShipmentDB db)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AirportRepository"/> class.
+        /// </summary>
+        /// <param name="db">The shipment db instance.</param>
+        public AirportRepository(ShipmentDb db)
         {
-            _db = db;
+            this.db = db;
         }
 
+        /// <inheritdoc/>
         public async Task<List<Airport>> Get()
         {
-            return await this._db.Airports.ToListAsync();
+            return await this.db.Airports.ToListAsync();
         }
 
-        public async Task<Airport> Get(Guid id)
+        /// <inheritdoc/>
+        public async Task<Airport?> Get(Guid id)
         {
-            return await this._db.Airports.FirstOrDefaultAsync(a => a.Id == id);
+            return await this.db.Airports.FirstOrDefaultAsync(a => a.Id == id);
         }
     }
 }

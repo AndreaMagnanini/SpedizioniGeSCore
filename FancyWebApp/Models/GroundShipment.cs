@@ -1,10 +1,20 @@
-using System.ComponentModel.DataAnnotations;
-using FancyWebApp.Models;
+// <copyright file="GroundShipment.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-namespace FancyWebApp.DataBase;
-
-public class GroundShipment : Shipment
+namespace FancyWebApp.Models
 {
-    [Required]
-    public string DriverName { get; set; }
+    using System.ComponentModel.DataAnnotations;
+
+    /// <summary>
+    /// The ground shipment table entity.
+    /// </summary>
+    public class GroundShipment : Shipment
+    {
+        /// <summary>
+        /// Gets or sets the driver name field.
+        /// </summary>
+        [Required]
+        public string DriverName { get; set; }
+    }
 }

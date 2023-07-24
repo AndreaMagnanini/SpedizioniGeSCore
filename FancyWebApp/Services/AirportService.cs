@@ -11,9 +11,10 @@ namespace FancyWebApp.Services
         private readonly IAirportRepository _airportRepository;
         private readonly IMapper _mapper;
 
-        public AirportService(IAirportRepository airportRepository)
+        public AirportService(IAirportRepository airportRepository, IMapper mapper)
         {
             _airportRepository = airportRepository;
+            _mapper = mapper;
         }
 
         public async Task<List<AirportDto>> Get()

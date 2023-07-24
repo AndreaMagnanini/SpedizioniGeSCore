@@ -34,7 +34,7 @@ namespace FancyWebApp.Controllers
             }
         }
 
-        [HttpGet("{guid:id}")]
+        [HttpGet("{id:Guid}")]
         public async Task<ActionResult<AirportDto>> Get(Guid id)
         {
             try

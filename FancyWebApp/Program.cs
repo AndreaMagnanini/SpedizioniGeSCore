@@ -45,7 +45,7 @@ builder.Services.Configure<PasswordHasherOptions>(opt =>
 });
 
 builder.Services.Configure<SecurityStampValidatorOptions>(opt => opt.ValidationInterval = TimeSpan.FromMinutes(1));
-builder.Services.AddDbContext<ShipmentDB>(opt => opt
+builder.Services.AddDbContext<ShipmentDb>(opt => opt
     .UseSqlServer("Server=ANDREA-XPS; Database=Shipments; Initial Catalog=Shipments;Integrated Security=SSPI; TrustServerCertificate=True")); // Server=localhost,1433; User Id=SA; Database=Shipment; Password=MagnaniniA99;TrustServerCertificate=True
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

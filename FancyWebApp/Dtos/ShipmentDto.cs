@@ -23,5 +23,5 @@ public class ShipmentDto
     // public List<Box> Boxes { get; set; }
     // public List<Pallet> Pallets { get; set; }
     public ShipmentType Type { get; set; }
-    public ShimpentStatus Status { get; set; }
+    public ShipmentStatus Status { get; set; }
 }

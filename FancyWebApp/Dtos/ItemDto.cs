@@ -14,4 +14,5 @@ public class ItemDto
     public float? Tare { get; set; }
     public ItemType Type { get; set; }
     public int Availability { get; set; }
+    public int Quantity { get; set; }
 }
