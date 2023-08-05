@@ -1,13 +1,27 @@
-using FancyWebApp.Models;
+// <copyright file="ObjectDto.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-namespace FancyWebApp.Dtos;
-/// <summary>
-/// Data Transfer Object for entity Object
-/// </summary>
-public class ObjectDto : ItemDto
+namespace FancyWebApp.Dtos
 {
-    public string Description { get; set; }
-    public string EnglishDescription { get; set; }
-    public string Code { get; set; }
-    public int Value { get; set; }
+    /// <summary>
+    /// The object data transfer object.
+    /// </summary>
+    public class ObjectDto : ItemDto
+    {
+        /// <summary>
+        /// Gets or sets the object english description.
+        /// </summary>
+        public string EnglishDescription { get; set; }
+
+        /// <summary>
+        /// Gets or sets the object code.
+        /// </summary>
+        public string Code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the object value.
+        /// </summary>
+        public int Value { get; set; }
+    }
 }

@@ -1,64 +1,91 @@
-using FancyWebApp.Exceptions;
-using FancyWebApp.Interfaces.Services;
-using FancyWebApp.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+// <copyright file="UserController.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-namespace FancyWebApp.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class UserController : ControllerBase
+namespace FancyWebApp.Controllers
 {
-    private readonly UserManager<User> _userManager;
-    private readonly IUserService _userService;
+    using FancyWebApp.Exceptions;
+    using FancyWebApp.Interfaces.Services;
+    using FancyWebApp.Models;
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
 
-    public UserController(IUserService userService, UserManager<User> userManager)
+    /// <summary>
+    /// The user controller.
+    /// </summary>
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserController : ControllerBase
     {
-        _userService = userService;
-        _userManager = userManager;
-    }
+        private readonly UserManager<User> userManager;
+        private readonly IUserService userService;
 
-    [HttpPost("authenticate")]
-    public async Task<IActionResult> Login([FromBody] User user)
-    {
-        try
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserController"/> class.
+        /// </summary>
+        /// <param name="userService">The user service instance.</param>
+        /// <param name="userManager">The user manager instance.</param>
+        public UserController(IUserService userService, UserManager<User> userManager)
         {
-            var result = await this._userService.Login(user.UserName, user.HashedPassword);
-            if (result == PasswordVerificationResult.Success ||
-                result == PasswordVerificationResult.SuccessRehashNeeded)
-                return this.Ok();
-            else return this.Unauthorized();
+            this.userService = userService;
+            this.userManager = userManager;
         }
-        catch (NotFoundException ex)
-        {
-            return this.NotFound(ex.Message);
-        }
-        catch (Exception ex)
-        {
-            return this.Problem(ex.Message);
-        }
-    }
 
-    [HttpPost]
-    public async Task<IActionResult> SignUp(User user)
-    {
-        try
+        /// <summary>
+        /// Executes the POST Request to perform authentication for a user.
+        /// </summary>
+        /// <param name="user">The user data.</param>
+        /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
+        [HttpPost("authenticate")]
+        public async Task<IActionResult> Login([FromBody] User user)
         {
-            var newUser = await this._userService.Register(user);
-            if (user != null)
+            try
             {
-                return this.Ok();
+                var result = await this.userService.Login(user.UserName, user.HashedPassword);
+                if (result == PasswordVerificationResult.Success ||
+                    result == PasswordVerificationResult.SuccessRehashNeeded)
+                {
+                    return this.Ok();
+                }
+
+                return this.Unauthorized();
             }
-            else return this.Unauthorized();
+            catch (NotFoundException ex)
+            {
+                return this.NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return this.Problem(ex.Message);
+            }
         }
-        catch (BadRequestException ex)
+
+        /// <summary>
+        /// Executes the POST Request to perform a new user registrations.
+        /// </summary>
+        /// <param name="user">The new user data.</param>
+        /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
+        [HttpPost]
+        public async Task<IActionResult> SignUp(User user)
         {
-            return this.BadRequest(ex.Message);
-        }
-        catch (Exception ex)
-        {
-            return this.Problem(ex.Message);
+            try
+            {
+                var newUser = await this.userService.Register(user);
+                if (user != null)
+                {
+                    return this.Ok(newUser);
+                }
+
+                return this.Unauthorized();
+            }
+            catch (BadRequestException ex)
+            {
+                return this.BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return this.Problem(ex.Message);
+            }
         }
     }
 }

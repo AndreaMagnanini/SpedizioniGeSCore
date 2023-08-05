@@ -1,41 +1,57 @@
-using AutoMapper;
-using FancyWebApp.Dtos;
-using FancyWebApp.Interfaces.Repositories;
-using FancyWebApp.Interfaces.Services;
-using FancyWebApp.Models;
+// <copyright file="ShipmentService.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
-namespace FancyWebApp.Services;
-
-public class ShipmentService : IShipmentService
+namespace FancyWebApp.Services
 {
-    private readonly IShipmentRepository _shipmentRepository;
-    private readonly IMapper _mapper;
+    using AutoMapper;
+    using FancyWebApp.Dtos;
+    using FancyWebApp.Interfaces.Repositories;
+    using FancyWebApp.Interfaces.Services;
+    using FancyWebApp.Models;
 
-    public ShipmentService(IShipmentRepository shipmentRepository, IMapper mapper)
+    /// <summary>
+    /// The shipment service.
+    /// </summary>
+    public class ShipmentService : IShipmentService
     {
-        _shipmentRepository = shipmentRepository;
-        _mapper = mapper;
-    }
+        private readonly IShipmentRepository shipmentRepository;
+        private readonly IMapper mapper;
 
-    public async Task<List<ShipmentDto>> Get()
-    {
-        var shipments = await this._shipmentRepository.Get();
-        var result = shipments.Select(s => this._mapper.Map<ShipmentDto>(s)).ToList();
-        return result ?? new List<ShipmentDto>();
-    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShipmentService"/> class.
+        /// </summary>
+        /// <param name="shipmentRepository">The shipment repository instance.</param>
+        /// <param name="mapper">The auto mapper instance.</param>
+        public ShipmentService(IShipmentRepository shipmentRepository, IMapper mapper)
+        {
+            this.shipmentRepository = shipmentRepository;
+            this.mapper = mapper;
+        }
 
-    public async Task<List<ShipmentDto>> GetByYear(int year)
-    {
-        var shipments = await this._shipmentRepository.GetByYear(year);
-        var result = shipments.Select(s => this._mapper.Map<ShipmentDto>(s)).ToList();
-        return result ?? new List<ShipmentDto>();
-    }
-    public async Task<ShipmentDto> Post(ShipmentDto shipmentDto)
-    {
-        var shipment = this._mapper.Map<Shipment>(shipmentDto);
-        shipment.Id = Guid.NewGuid();        await this._shipmentRepository.Post(shipment);
-        return shipmentDto;
-    }
+        /// <inheritdoc/>
+        public async Task<List<ShipmentDto>> Get()
+        {
+            var shipments = await this.shipmentRepository.Get();
+            var result = shipments.Select(s => this.mapper.Map<ShipmentDto>(s)).ToList();
+            return result;
+        }
 
-    
+        /// <inheritdoc/>
+        public async Task<List<ShipmentDto>> GetByYear(int year)
+        {
+            var shipments = await this.shipmentRepository.GetByYear(year);
+            var result = shipments.Select(s => this.mapper.Map<ShipmentDto>(s)).ToList();
+            return result;
+        }
+
+        /// <inheritdoc/>
+        public async Task<ShipmentDto> Post(ShipmentDto shipmentDto)
+        {
+            var shipment = this.mapper.Map<Shipment>(shipmentDto);
+            shipment.Id = Guid.NewGuid();
+            await this.shipmentRepository.Post(shipment);
+            return shipmentDto;
+        }
+    }
 }

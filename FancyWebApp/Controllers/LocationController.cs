@@ -1,27 +1,42 @@
-﻿using FancyWebApp.Dtos;
-using FancyWebApp.Exceptions;
-using FancyWebApp.Interfaces.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿// <copyright file="LocationController.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace FancyWebApp.Controllers
 {
+    using FancyWebApp.Dtos;
+    using FancyWebApp.Exceptions;
+    using FancyWebApp.Interfaces.Services;
+    using Microsoft.AspNetCore.Mvc;
+
+    /// <summary>
+    /// The location controller.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class LocationController : ControllerBase
     {
-        private readonly ILocationService _locationService;
+        private readonly ILocationService locationService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocationController"/> class.
+        /// </summary>
+        /// <param name="locationService">The location service instance.</param>
         public LocationController(ILocationService locationService)
         {
-            _locationService = locationService;
+            this.locationService = locationService;
         }
 
+        /// <summary>
+        /// Executes the GET Request to fetch all available locations.
+        /// </summary>
+        /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
         [HttpGet]
         public async Task<ActionResult<List<LocationDto>>> Get()
         {
             try
             {
-                var locations = await this._locationService.Get();
+                var locations = await this.locationService.Get();
                 return this.Ok(locations);
             }
             catch (NotFoundException ex)
@@ -34,12 +49,17 @@ namespace FancyWebApp.Controllers
             }
         }
 
+        /// <summary>
+        /// Executes the GET Request to fetch a single location given its id.
+        /// </summary>
+        /// <param name="id">The location identifier.</param>
+        /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
         [HttpGet("{id:Guid}")]
         public async Task<ActionResult<LocationDto>> Get(Guid id)
         {
             try
             {
-                var location = await this._locationService.Get(id);
+                var location = await this.locationService.Get(id);
                 return this.Ok(location);
             }
             catch (NotFoundException ex)

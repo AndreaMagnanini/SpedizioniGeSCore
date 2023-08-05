@@ -1,34 +1,52 @@
-﻿using AutoMapper;
-using FancyWebApp.Dtos;
-using FancyWebApp.Exceptions;
-using FancyWebApp.Interfaces.Repositories;
-using FancyWebApp.Interfaces.Services;
+﻿// <copyright file="LocationService.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace FancyWebApp.Services
 {
+    using AutoMapper;
+    using FancyWebApp.Dtos;
+    using FancyWebApp.Exceptions;
+    using FancyWebApp.Interfaces.Repositories;
+    using FancyWebApp.Interfaces.Services;
+
+    /// <summary>
+    /// The location service.
+    /// </summary>
     public class LocationService : ILocationService
     {
-        private readonly ILocationRepository _locationRepository;
-        private readonly IMapper _mapper;
+        private readonly ILocationRepository locationRepository;
+        private readonly IMapper mapper;
 
-        public LocationService(ILocationRepository locationRepository)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LocationService"/> class.
+        /// </summary>
+        /// <param name="locationRepository">The location repository instance.</param>
+        /// <param name="mapper">The auto mapper instance.</param>
+        public LocationService(ILocationRepository locationRepository, IMapper mapper)
         {
-            _locationRepository = locationRepository;
+            this.locationRepository = locationRepository;
+            this.mapper = mapper;
         }
 
+        /// <inheritdoc/>
         public async Task<List<LocationDto>> Get()
         {
-            var locations = await this._locationRepository.Get();
-            return locations.Select(l => this._mapper.Map<LocationDto>(l)).ToList();
+            var locations = await this.locationRepository.Get();
+            return locations.Select(l => this.mapper.Map<LocationDto>(l)).ToList();
         }
 
+        /// <inheritdoc/>
         public async Task<LocationDto> Get(Guid id)
         {
-            var location = await this._locationRepository.Get(id);
+            var location = await this.locationRepository.Get(id);
 
-            if (location == null) throw new NotFoundException($"Unknown location with id {id}");
+            if (location == null)
+            {
+                throw new NotFoundException($"Unknown location with id {id}");
+            }
 
-            return _mapper.Map<LocationDto>(location);
+            return this.mapper.Map<LocationDto>(location);
         }
     }
 }

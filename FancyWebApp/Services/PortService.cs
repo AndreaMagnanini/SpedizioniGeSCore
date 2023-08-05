@@ -29,21 +29,14 @@ namespace FancyWebApp.Services
             this.mapper = mapper;
         }
 
-        /// <summary>
-        /// Fetches all available ports.
-        /// </summary>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task<List<PortDto>> Get()
         {
             var ports = await this.portRepository.Get();
             return ports.Select(p => this.mapper.Map<PortDto>(p)).ToList();
         }
 
-        /// <summary>
-        /// Fetches a single port given its identifier.
-        /// </summary>
-        /// <param name="id">The port identifier.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task<PortDto> Get(Guid id)
         {
             var port = await this.portRepository.Get(id);

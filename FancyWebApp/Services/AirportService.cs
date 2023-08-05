@@ -1,35 +1,52 @@
-﻿using AutoMapper;
-using FancyWebApp.Dtos;
-using FancyWebApp.Exceptions;
-using FancyWebApp.Interfaces.Repositories;
-using FancyWebApp.Interfaces.Services;
+﻿// <copyright file="AirportService.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace FancyWebApp.Services
 {
+    using AutoMapper;
+    using FancyWebApp.Dtos;
+    using FancyWebApp.Exceptions;
+    using FancyWebApp.Interfaces.Repositories;
+    using FancyWebApp.Interfaces.Services;
+
+    /// <summary>
+    /// The airport service.
+    /// </summary>
     public class AirportService : IAirportService
     {
-        private readonly IAirportRepository _airportRepository;
-        private readonly IMapper _mapper;
+        private readonly IAirportRepository airportRepository;
+        private readonly IMapper mapper;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AirportService"/> class.
+        /// </summary>
+        /// <param name="airportRepository">The airport repository instance.</param>
+        /// <param name="mapper">The auto mapper instance.</param>
         public AirportService(IAirportRepository airportRepository, IMapper mapper)
         {
-            _airportRepository = airportRepository;
-            _mapper = mapper;
+            this.airportRepository = airportRepository;
+            this.mapper = mapper;
         }
 
+        /// <inheritdoc/>
         public async Task<List<AirportDto>> Get()
         {
-            var airports = await this._airportRepository.Get();
-            return airports.Select(a => this._mapper.Map<AirportDto>(a)).ToList();
+            var airports = await this.airportRepository.Get();
+            return airports.Select(a => this.mapper.Map<AirportDto>(a)).ToList();
         }
 
+        /// <inheritdoc/>
         public async Task<AirportDto> Get(Guid id)
         {
-            var airport = await this._airportRepository.Get(id);
+            var airport = await this.airportRepository.Get(id);
 
-            if (airport == null) throw new NotFoundException($"Unknown airport with id {id}");
+            if (airport == null)
+            {
+                throw new NotFoundException($"Unknown airport with id {id}");
+            }
 
-            return this._mapper.Map<AirportDto>(airport);
+            return this.mapper.Map<AirportDto>(airport);
         }
     }
 }

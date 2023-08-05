@@ -1,8 +1,17 @@
-namespace FancyWebApp.Dtos;
-/// <summary>
-/// Data Transfer Object for entity Sigil
-/// </summary>
-public class SigilDto
+// <copyright file="SigilDto.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace FancyWebApp.Dtos
 {
-    public string Code { get; set; }
+    /// <summary>
+    /// The sigil data transfer object.
+    /// </summary>
+    public class SigilDto
+    {
+        /// <summary>
+        /// Gets or sets the sigil code.
+        /// </summary>
+        public string Code { get; set; }
+    }
 }

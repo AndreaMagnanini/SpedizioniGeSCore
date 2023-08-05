@@ -216,7 +216,7 @@ namespace FancyWebApp.DataBase
                 Id = Guid.NewGuid(),
                 Description = "Barahin GP",
                 LocationId = locationGuid,
-                ExtraEU = true,
+                ExtraEu = true,
                 Alias = "BAH",
                 EventNumber = 1,
                 Start = DateTime.Parse("03/03/2023 00:00:00 +1:00"),

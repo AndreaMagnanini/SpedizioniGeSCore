@@ -1,9 +1,13 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using FancyWebApp.Models.Common;
+// <copyright file="Shipment.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace FancyWebApp.Models
 {
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using FancyWebApp.Models.Common;
+
     /// <summary>
     /// Represents a view over the set of items that need to be shipped for a specific event to a specific location, in a specific way.
     /// </summary>

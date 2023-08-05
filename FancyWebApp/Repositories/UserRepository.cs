@@ -28,19 +28,11 @@ namespace FancyWebApp.Repositories
             this.db = db;
         }
 
-        /// <summary>
-        /// Fetches an user given its name.
-        /// </summary>
-        /// <param name="userName">The user name.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task<User?> GetUserByUserName(string userName) =>
             await this.db.Users.FirstOrDefaultAsync(u => u.UserName == userName);
 
-        /// <summary>
-        /// Registers a user.
-        /// </summary>
-        /// <param name="user">The given user.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task Register(User user)
         {
             await this.db.Users.AddAsync(user);

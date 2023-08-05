@@ -28,25 +28,14 @@ namespace FancyWebApp.Repositories
             this.db = db;
         }
 
-        /// <summary>
-        /// Fetches all available shipments.
-        /// </summary>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task<List<Shipment>> Get() => await this.db.Shipments.ToListAsync();
 
-        /// <summary>
-        /// Fetches multiple shipments filtered by year.
-        /// </summary>
-        /// <param name="year">The filtering year.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task<List<Shipment>> GetByYear(int year) =>
             await this.db.Shipments.Where(s => s.CreationDate.Date.Year == year).ToListAsync();
 
-        /// <summary>
-        /// Posts a new instance of shipment.
-        /// </summary>
-        /// <param name="shipment">The given shipment instance.</param>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <inheritdoc/>
         public async Task Post(Shipment shipment)
         {
             await this.db.Shipments.AddAsync(shipment);
