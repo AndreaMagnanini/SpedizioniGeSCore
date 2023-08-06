@@ -24,8 +24,7 @@ namespace FancyWebApp.Models
         /// </summary>
         [Required]
 
-        // ReSharper disable once InconsistentNaming
-        public string IATACode { get; set; }
+        public string IataCode { get; set; }
 
         /// <summary>
         /// Gets or sets the airport name field.

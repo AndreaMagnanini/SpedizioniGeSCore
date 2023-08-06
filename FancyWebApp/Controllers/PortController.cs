@@ -27,7 +27,6 @@ namespace FancyWebApp.Controllers
             this.portService = portService;
         }
 
-
         /// <summary>
         /// Executes the GET Request to fetch all available ports.
         /// </summary>
@@ -49,7 +48,6 @@ namespace FancyWebApp.Controllers
                 return this.Problem(ex.Message);
             }
         }
-
 
         /// <summary>
         /// Executes the GET Request o get a single port given its id.

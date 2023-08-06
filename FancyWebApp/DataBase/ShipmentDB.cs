@@ -180,7 +180,7 @@ namespace FancyWebApp.DataBase
                     DeletionDate = null,
                     DeletionUser = null,
                     Id = Guid.NewGuid(),
-                    Name = "Scuderia Ferrari"
+                    Name = "Scuderia Ferrari",
                 },
                 new Scuderia
                 {
@@ -191,7 +191,7 @@ namespace FancyWebApp.DataBase
                     DeletionDate = null,
                     DeletionUser = null,
                     Id = Guid.NewGuid(),
-                    Name = "Sauber Alfa Romeo Racing"
+                    Name = "Sauber Alfa Romeo Racing",
                 },
                 new Scuderia
                 {
@@ -202,7 +202,7 @@ namespace FancyWebApp.DataBase
                     DeletionDate = null,
                     DeletionUser = null,
                     Id = Guid.NewGuid(),
-                    Name = "Haas F1 Team"
+                    Name = "Haas F1 Team",
                 });
 
             modelBuilder.Entity<Event>().HasData(new Event
@@ -220,7 +220,7 @@ namespace FancyWebApp.DataBase
                 Alias = "BAH",
                 EventNumber = 1,
                 Start = DateTime.Parse("03/03/2023 00:00:00 +1:00"),
-                End = DateTime.Parse("06/03/2023 00:00:00 +1:00")
+                End = DateTime.Parse("06/03/2023 00:00:00 +1:00"),
             });
 
             modelBuilder.Entity<Object>()
@@ -242,7 +242,7 @@ namespace FancyWebApp.DataBase
                         Id = Guid.NewGuid(),
                         Description = "Gearbox #05",
                         Code = "10 15",
-                        Value = 10000
+                        Value = 10000,
                     });
 
             modelBuilder.Entity<Box>()
@@ -263,7 +263,7 @@ namespace FancyWebApp.DataBase
                         Type = ItemType.Box,
                         Id = Guid.NewGuid(),
                         BoxNumber = "F-M05",
-                        Description = "Alluminium and Magnesium Gearbox parts"
+                        Description = "Alluminium and Magnesium Gearbox parts",
                     });
             modelBuilder.Entity<Pallet>()
                 .HasData(
@@ -290,7 +290,7 @@ namespace FancyWebApp.DataBase
                 .HasData(new HsCode
                 {
                     Code = "10 15",
-                    Description = "Gearbox assemblies and components"
+                    Description = "Gearbox assemblies and components",
                 });
         }
     }

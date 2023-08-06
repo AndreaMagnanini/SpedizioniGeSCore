@@ -72,7 +72,9 @@ namespace FancyWebApp.Models
     /// <summary>
     /// Enum representing all possible item types.
     /// </summary>
+#pragma warning disable SA1201 // Elements should appear in the correct order
     public enum ItemType
+#pragma warning restore SA1201 // Elements should appear in the correct order
     {
         /// <summary>
         /// Item as single object, only can be contained.

@@ -3,7 +3,8 @@
 // </copyright>
 
 namespace FancyWebApp.Models
-{/// <summary>
+{
+    /// <summary>
     /// The camion table entity.
     /// </summary>
     public class Camion

@@ -7,7 +7,7 @@ namespace FancyWebApp.Exceptions
     using System.Net;
 
     /// <summary>
-    /// The Exception representig a Conflict Response Status.
+    /// The Exception representing a Conflict Response Status.
     /// </summary>
     public class ConflictException : ServiceException
     {

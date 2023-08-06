@@ -16,6 +16,7 @@ namespace FancyWebApp.Interfaces.Services
         /// </summary>
         /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
         Task<List<LocationDto>> Get();
+
         /// <summary>
         /// Fetches and performs operation onto a single location, given its id.
         /// </summary>

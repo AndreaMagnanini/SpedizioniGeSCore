@@ -28,7 +28,6 @@ namespace FancyWebApp.Repositories
             this.db = db;
         }
 
-
         /// <inheritdoc/>
         public async Task<List<Port>> Get()
         {

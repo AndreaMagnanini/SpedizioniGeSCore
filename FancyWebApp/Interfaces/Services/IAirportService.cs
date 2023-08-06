@@ -16,6 +16,7 @@ namespace FancyWebApp.Interfaces.Services
         /// </summary>
         /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
         Task<List<AirportDto>> Get();
+
         /// <summary>
         /// Fetches and performs operations on a single airport given its identifier.
         /// </summary>

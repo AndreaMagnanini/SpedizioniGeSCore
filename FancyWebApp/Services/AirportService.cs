@@ -41,12 +41,7 @@ namespace FancyWebApp.Services
         {
             var airport = await this.airportRepository.Get(id);
 
-            if (airport == null)
-            {
-                throw new NotFoundException($"Unknown airport with id {id}");
-            }
-
-            return this.mapper.Map<AirportDto>(airport);
+            return airport == null ? throw new NotFoundException($"Unknown airport with id {id}") : this.mapper.Map<AirportDto>(airport);
         }
     }
 }

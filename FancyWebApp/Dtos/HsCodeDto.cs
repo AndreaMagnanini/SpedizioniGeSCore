@@ -1,4 +1,8 @@
-﻿namespace FancyWebApp.Dtos
+﻿// <copyright file="HsCodeDto.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace FancyWebApp.Dtos
 {
     /// <summary>
     /// The Hs code data transfer object.

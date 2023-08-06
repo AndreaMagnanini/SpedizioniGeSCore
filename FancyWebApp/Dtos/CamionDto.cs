@@ -13,6 +13,7 @@ namespace FancyWebApp.Dtos
         /// Gets or sets the camion society.
         /// </summary>
         public string Society { get; set; }
+
         /// <summary>
         /// Gets or sets the camion model.
         /// </summary>
