@@ -31,17 +31,8 @@ namespace FancyWebApp.Services
         /// <inheritdoc/>
         public async Task<PasswordVerificationResult> Login(string userName, string password)
         {
-            var user = await this.userRepository.GetUserByUserName(userName);
-            if (user == null)
-            {
-                throw new NotFoundException($"No user found with username: {userName}");
-            }
-
-            if (this.VerifyPassword(password, user.Salt))
-            {
-                return PasswordVerificationResult.Success;
-            }
-            return PasswordVerificationResult.Failed;
+            var user = await this.userRepository.GetUserByUserName(userName) ?? throw new NotFoundException($"No user found with username: {userName}");
+            return VerifyPassword(password, user.Salt) ? PasswordVerificationResult.Success : PasswordVerificationResult.Failed;
         }
 
         /// <inheritdoc/>
@@ -53,39 +44,39 @@ namespace FancyWebApp.Services
                 throw new BadRequestException($"User {user.UserName} already exists.");
             }
 
-            var hashSalt = this.EncryptPassword(user.HashedPassword);
+            var hashSalt = EncryptPassword(user.HashedPassword);
             user.HashedPassword = hashSalt.Hash;
             user.Salt = hashSalt.Salt;
             await this.userRepository.Register(user);
             return user;
         }
 
-        private HashSalt EncryptPassword(string password)
+        private static bool VerifyPassword(string givenPassword, byte[] salt)
         {
-            byte[] salt = new byte[128 / 8];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
-
-            string hashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA1,
-                iterationCount: 12000,
-                numBytesRequested: 256 / 8));
-            return new HashSalt() { Hash = hashedPassword, Salt = salt };
-        }
-
-        private bool VerifyPassword(string givenPassword, byte[] salt)
-        {
-            string hashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+            var hashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: givenPassword,
                 salt: salt,
                 prf: KeyDerivationPrf.HMACSHA1,
                 iterationCount: 12000,
                 numBytesRequested: 256 / 8));
             return hashedPassword == givenPassword;
+        }
+
+        private static HashSalt EncryptPassword(string password)
+        {
+            var salt = new byte[128 / 8];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(salt);
+            }
+
+            var hashedPassword = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: password,
+                salt: salt,
+                prf: KeyDerivationPrf.HMACSHA1,
+                iterationCount: 12000,
+                numBytesRequested: 256 / 8));
+            return new HashSalt() { Hash = hashedPassword, Salt = salt };
         }
     }
 

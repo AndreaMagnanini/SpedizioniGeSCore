@@ -41,12 +41,7 @@ namespace FancyWebApp.Services
         {
             var port = await this.portRepository.Get(id);
 
-            if (port == null)
-            {
-                throw new NotFoundException($"Unknown port with id {id}");
-            }
-
-            return this.mapper.Map<PortDto>(port);
+            return port == null ? throw new NotFoundException($"Unknown port with id {id}") : this.mapper.Map<PortDto>(port);
         }
     }
 }

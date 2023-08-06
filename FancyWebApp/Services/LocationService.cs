@@ -41,12 +41,7 @@ namespace FancyWebApp.Services
         {
             var location = await this.locationRepository.Get(id);
 
-            if (location == null)
-            {
-                throw new NotFoundException($"Unknown location with id {id}");
-            }
-
-            return this.mapper.Map<LocationDto>(location);
+            return location == null ? throw new NotFoundException($"Unknown location with id {id}") : this.mapper.Map<LocationDto>(location);
         }
     }
 }
