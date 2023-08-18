@@ -4,9 +4,6 @@
 
 namespace FancyWebApp.Repositories
 {
-    using System.Data.Entity;
-    using FancyWebApp.DataBase;
-    using FancyWebApp.Interfaces.Repositories;
     using FancyWebApp.Models;
 
     /// <summary>
@@ -29,13 +26,13 @@ namespace FancyWebApp.Repositories
         }
 
         /// <inheritdoc/>
-        public async Task<List<Location>> Get()
+        public async Task<List<Location?>> Get()
         {
             return await this.db.Locations.ToListAsync();
         }
 
         /// <inheritdoc/>
-        public async Task<Location> Get(Guid id)
+        public async Task<Location?> Get(Guid id)
         {
             return await this.db.Locations.FirstOrDefaultAsync(l => l.Id == id);
         }

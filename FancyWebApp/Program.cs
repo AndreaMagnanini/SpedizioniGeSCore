@@ -1,11 +1,6 @@
-using FancyWebApp.DataBase;
-using FancyWebApp.Interfaces.Repositories;
-using FancyWebApp.Interfaces.Services;
-using FancyWebApp.Repositories;
-using FancyWebApp.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+// <copyright file="Program.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 var builder = WebApplication.CreateBuilder(args);
 

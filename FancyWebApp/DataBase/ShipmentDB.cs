@@ -5,7 +5,6 @@
 namespace FancyWebApp.DataBase
 {
     using FancyWebApp.Models;
-    using Microsoft.EntityFrameworkCore;
     using Object = FancyWebApp.Models.Object;
 
     /// <summary>

@@ -5,9 +5,7 @@
 namespace FancyWebApp.Controllers
 {
     using FancyWebApp.Exceptions;
-    using FancyWebApp.Interfaces.Services;
     using FancyWebApp.Models;
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>

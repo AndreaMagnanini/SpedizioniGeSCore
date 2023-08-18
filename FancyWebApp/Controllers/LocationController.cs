@@ -6,7 +6,6 @@ namespace FancyWebApp.Controllers
 {
     using FancyWebApp.Dtos;
     using FancyWebApp.Exceptions;
-    using FancyWebApp.Interfaces.Services;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>

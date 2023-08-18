@@ -2,13 +2,13 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
+using FancyWebApp.Models;
+
 namespace FancyWebApp.Services
 {
     using AutoMapper;
     using FancyWebApp.Dtos;
     using FancyWebApp.Exceptions;
-    using FancyWebApp.Interfaces.Repositories;
-    using FancyWebApp.Interfaces.Services;
 
     /// <summary>
     /// The location service.

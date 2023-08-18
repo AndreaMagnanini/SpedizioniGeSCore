@@ -4,10 +4,7 @@
 
 namespace FancyWebApp.Repositories
 {
-    using FancyWebApp.DataBase;
-    using FancyWebApp.Interfaces.Repositories;
     using FancyWebApp.Models;
-    using Microsoft.EntityFrameworkCore;
 
     /// <summary>
     /// The repository linked to airport entity.

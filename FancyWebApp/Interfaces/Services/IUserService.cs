@@ -5,7 +5,6 @@
 namespace FancyWebApp.Interfaces.Services
 {
     using FancyWebApp.Models;
-    using Microsoft.AspNetCore.Identity;
 
     /// <summary>
     /// The user service interface.

@@ -5,8 +5,6 @@
 namespace FancyWebApp.Repositories
 {
     using System.Data.Entity;
-    using FancyWebApp.DataBase;
-    using FancyWebApp.Interfaces.Repositories;
     using FancyWebApp.Models;
 
     /// <summary>

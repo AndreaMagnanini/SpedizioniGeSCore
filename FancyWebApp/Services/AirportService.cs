@@ -7,8 +7,6 @@ namespace FancyWebApp.Services
     using AutoMapper;
     using FancyWebApp.Dtos;
     using FancyWebApp.Exceptions;
-    using FancyWebApp.Interfaces.Repositories;
-    using FancyWebApp.Interfaces.Services;
 
     /// <summary>
     /// The airport service.

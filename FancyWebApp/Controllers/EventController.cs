@@ -85,7 +85,13 @@ namespace FancyWebApp.Controllers
             new EventDto
             {
                 Description = "2023 Singapore GP",
-                Location = null,
+                Location = new LocationDto
+                {
+                    Name = "Marina Bay",
+                    Address = null,
+                    Nation = "Singapore",
+                    City = null,
+                },
                 ExtraEu = true,
                 Alias = "SINGP",
                 EventNumber = null,

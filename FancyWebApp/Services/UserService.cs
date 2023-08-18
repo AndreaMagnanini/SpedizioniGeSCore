@@ -6,11 +6,8 @@ namespace FancyWebApp.Services
 {
     using System.Security.Cryptography;
     using FancyWebApp.Exceptions;
-    using FancyWebApp.Interfaces.Repositories;
-    using FancyWebApp.Interfaces.Services;
     using FancyWebApp.Models;
     using Microsoft.AspNetCore.Cryptography.KeyDerivation;
-    using Microsoft.AspNetCore.Identity;
 
     /// <summary>
     /// The user service.

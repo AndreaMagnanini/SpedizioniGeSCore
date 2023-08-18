@@ -6,8 +6,6 @@ namespace FancyWebApp.Services
 {
     using AutoMapper;
     using FancyWebApp.Dtos;
-    using FancyWebApp.Interfaces.Repositories;
-    using FancyWebApp.Interfaces.Services;
     using FancyWebApp.Models;
 
     /// <summary>

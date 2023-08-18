@@ -15,13 +15,13 @@ namespace FancyWebApp.Interfaces.Repositories
         /// Fetches from db all available locations.
         /// </summary>
         /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
-        Task<List<Location>> Get();
+        Task<List<Location?>> Get();
 
         /// <summary>
         /// Fetches a single location given its identifier.
         /// </summary>
         /// <param name="id">The Location identifier.</param>
         /// <returns>A <see cref="Task{TResult}"/> representing the result of the asynchronous operation.</returns>
-        Task<Location> Get(Guid id);
+        Task<Location?> Get(Guid id);
     }
 }
