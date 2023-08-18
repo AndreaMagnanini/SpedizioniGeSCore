@@ -1,10 +1,10 @@
 import {Location} from './Location'
 export interface Event{
-    Description: string;
-    Alias: string;
-    Location: Location;
-    ExtraEU: boolean;
-    EventNumber: number;
-    Start: Date;
-    End: Date;
+    description: string;
+    alias: string;
+    location: Location;
+    extraEu: boolean;
+    eventNumber: number;
+    start: Date;
+    end: Date;
 }

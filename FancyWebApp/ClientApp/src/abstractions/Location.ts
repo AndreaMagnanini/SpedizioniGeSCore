@@ -1,6 +1,6 @@
 export interface Location{
-    Name: string;
-    Address: string;
-    City: string;
-    Nation: string;
+    name: string;
+    address: string;
+    city: string;
+    nation: string;
 }
