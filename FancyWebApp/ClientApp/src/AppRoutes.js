@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Locations from "./pages/Locations";
-import Shipments from "./pages/Shipments";
+import CreateShipment from "./pages/CreateShipment";
 
 const AppRoutes = [
   {
@@ -11,8 +11,8 @@ const AppRoutes = [
   },
   {
     index: 2,
-    path: "/shipments",
-    element: <Shipments year={2023}/>
+    path: "/shipment",
+    element: <CreateShipment year={2023}/>
   },
   {
     index: 3,

@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import FerrariHeader from "./components/FerrariHeader";
+
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 
 export default function App () {
@@ -17,12 +18,3 @@ export default function App () {
         </BrowserRouter>
     )
 }
-
-// TODO:
-// - provare gradients;
-// - rimettere su DB;
-// - applicare nuove migrations;
-// - loader lineare;
-// - loader circolare;
-// - popolare dati card;
-// - fetchare utente;
