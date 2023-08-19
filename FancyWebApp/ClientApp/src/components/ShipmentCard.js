@@ -1,8 +1,9 @@
+// @ts-nocheck
 import React from 'react';
 import {
     Accordion,
     AccordionDetails, AccordionSummary, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle,
-    makeStyles,
+    makeStyles, Tooltip,
     Typography, useTheme
 } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -13,7 +14,7 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import {IconButton} from "@material-ui/core";
 import {green, red} from "@material-ui/core/colors";
-import Flag from "./Flag";
+import {Flag} from "./Flag";
 import {EU} from "country-flag-icons/react/3x2";
 import {useNavigate} from "react-router-dom";
 import {TransitionGroup} from 'react-transition-group';
@@ -73,7 +74,7 @@ const useStyles = makeStyles({
         filter: "invert(0.15)",
         paddingLeft: "20px",
         backgroundColor: "none",
-        transform: "translateY(-65%)",
+        transform: "translateY(-65%) scale(0.9)",
         marginBottom: "-120px",
         zIndex: "2",
     },
@@ -81,7 +82,7 @@ const useStyles = makeStyles({
         filter: "invert(0.15)",
         paddingLeft: "10px",
         backgroundColor: "none",
-        transform: "translateY(-70%) scale(0.8) ",
+        transform: "translateY(-80%) scale(0.8) ",
         marginBottom: "-80px",
         zIndex: "2",
     },
@@ -89,7 +90,7 @@ const useStyles = makeStyles({
         filter: "invert(0.15)",
         paddingRight: "20px",
         backgroundColor: "none",
-        transform: "translateY(-85%) scaleX(-1) scale(0.9)",
+        transform: "translateY(-90%) scaleX(-1) scale(0.9)",
         marginBottom: "-50px",
         zIndex: "2",
     },
@@ -211,6 +212,7 @@ function ShipmentCard({shipment}) {
     const [deleteDialogOpen, setDeleteDialogOpen] = React.useState(false);
     const [revertDialogOpen, setRevertDialogOpen] = React.useState(false);
     const [expanded, setExpanded] = React.useState(window.innerHeight > 900);
+    const [contentExpanded, setContentExpanded] = React.useState(window.innerHeight > 900);
 
     window.addEventListener('resize', () => expandElements());
     let [width, height] = useWindowSize();
@@ -222,23 +224,37 @@ function ShipmentCard({shipment}) {
     let startingDate = shipment.event.start.split('T')[0].replaceAll('-', '/');
     let endingDate = shipment.event.end.split('T')[0].replaceAll('-', '/');
 
+    function handleContentExpansion(expand){
+        if(expand !== undefined){
+            setContentExpanded(expand);
+        } 
+        else{
+            setContentExpanded(!contentExpanded);
+        }
+    }
 
     function handleExpansion(expand){
-        if(expand !== undefined)
+        if(expand !== undefined){
             setExpanded(expand);
-        else
+        } 
+        else{
             setExpanded(!expanded);
+        }
     }
+
     function expandElements(){
 
         if(window.innerHeight > 900){
             handleExpansion(true);
+            handleContentExpansion(true);
         }
 
         if(window.innerHeight < 900){
             handleExpansion(false);
+            handleContentExpansion(false);
         }
     }
+    
     function downloadShipment(){
 
     }
@@ -271,8 +287,8 @@ function ShipmentCard({shipment}) {
                 </div>
                 <div className={classes.typeWrapper}>
                     {displayAir? <img alt="type"  className={classes.typeAir} src={require('../assets/plane.png')} height="120px" width="120px" /> : null}
-                    {displayShip? <img alt="type"   className={classes.typeShip} src={require('../assets/boat-with-containers.png')} height="100px" width="120px" /> : null}
-                    {displayGround? <img alt="type"   className={classes.typeGround} src={require('../assets/camion.png')} height="50px" width="120px" /> : null}
+                    {displayShip? <img alt="type"   className={classes.typeShip} src={require('../assets/boat-with-containers.png')} height="80px" width="120px" /> : null}
+                    {displayGround? <img alt="type"   className={classes.typeGround} src={require('../assets/camion.png')} height="45px" width="120px" /> : null}
                 </div>
                 <div className={classes.cardContent}>
                     <Accordion defaultExpanded style={{ boxShadow: "none" }} disableGutters>
@@ -383,7 +399,7 @@ function ShipmentCard({shipment}) {
                                     </Typography>
                                 </div>
                             </div>: null}
-                            {displayAir? <div className={classes.aiportsWrapper}>
+                            {displayAir? <div className={classes.airportsWrapper}>
                                 <div className={classes.originWrapper}>
                                     <Typography>
                                         {shipment.originAirport.iataCode} - {shipment.originAirport.name} <br/>
@@ -405,7 +421,7 @@ function ShipmentCard({shipment}) {
 
                         </AccordionDetails>
                     </Accordion> : null}
-                    <Accordion style={{ boxShadow: "none" }} defaultExpanded={height > 900} expanded={expanded} onChange={() => handleExpansion()}>
+                    <Accordion style={{ boxShadow: "none" }} defaultExpanded={height > 900} expanded={contentExpanded} onChange={() => handleContentExpansion()}>
                         <AccordionSummary
                             className={classes.summaryTitle}
                             expandIcon={<ExpandMoreIcon />}
@@ -426,18 +442,27 @@ function ShipmentCard({shipment}) {
                         <Typography style={{paddingLeft: "10px", fontWeight: "900"}} variant="body1">{status}</Typography>
                     </div>
                     <div className={classes.actions}>
-                        {shipment.status!==0 ?<IconButton aria-label="revert status" onClick={() => setRevertDialogOpen(true)}>
-                            <ReplayIcon fontSize="medium" style={{color: green[500]}}></ReplayIcon>
-                        </IconButton> : null}
-                        <IconButton aria-label="download documentation" onClick={() => downloadShipment()}>
-                            <GetAppIcon fontSize="medium" color="primary"></GetAppIcon>
-                        </IconButton>
-                        <IconButton aria-label="edit" onClick={() => editShipment()}>
-                            <EditSharpIcon fontSize="medium"></EditSharpIcon>
-                        </IconButton>
-                       <IconButton aria-label="delete" onClick={() => setDeleteDialogOpen(true)}>
-                           <DeleteSharpIcon fontSize="medium"></DeleteSharpIcon>
-                       </IconButton>
+                        {shipment.status!==0 ?
+                        <Tooltip title="revert">
+                            <IconButton aria-label="revert status" onClick={() => setRevertDialogOpen(true)}>
+                                <ReplayIcon fontSize="medium" style={{color: green[500]}}></ReplayIcon>
+                            </IconButton>
+                        </Tooltip>: null}
+                        <Tooltip title="download documentation">
+                            <IconButton aria-label="download documentation" onClick={() => downloadShipment()}>
+                                <GetAppIcon fontSize="medium" color="primary"></GetAppIcon>
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="edit">
+                            <IconButton aria-label="edit" onClick={() => editShipment()}>
+                                <EditSharpIcon fontSize="medium"></EditSharpIcon>
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="delete">
+                           <IconButton aria-label="delete" onClick={() => setDeleteDialogOpen(true)}>
+                               <DeleteSharpIcon fontSize="medium"></DeleteSharpIcon>
+                           </IconButton>
+                        </Tooltip>
                     </div>
                 </div>
                 <Dialog

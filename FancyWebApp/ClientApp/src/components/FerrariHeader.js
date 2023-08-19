@@ -8,7 +8,7 @@ import {
     MenuItem,
     Toolbar,
     Typography,
-    ThemeProvider, CssBaseline
+    ThemeProvider, CssBaseline, Button, Tooltip
 } from "@material-ui/core";
 import {makeStyles} from "@material-ui/core";
 import MissonWinnowIcon from "./MissonWinnowIcon";
@@ -19,22 +19,23 @@ import {ChevronRightSharp} from "@material-ui/icons";
 import {useLocation, useNavigate} from "react-router-dom";
 import {IconButton} from "@mui/material";
 import FerrariTheme from "../styles/FerrariTheme";
+import AddIcon from "@material-ui/icons/Add";
 
 const menuItems = [
     {
         text: "home",
         icon: <HomeOutlined color="primary"/>,
-        path: "/"
+        path: "/login"
     },
     {
         text: "shipments",
         icon: <ListOutlined color="primary"/>,
-        path: "/shipments"
+        path: "/"
     },
     {
         text: "new",
         icon: <AddOutlined color="primary"/>,
-        path: "/new"
+        path: "/shipment"
     },
 ]
  const user = 'amagnanini'
@@ -108,6 +109,14 @@ const useStyles = makeStyles({
         width: `300px`,
         background: "#212121",
         top: "60px"
+    },
+    newEventButton:{background: "linear-gradient(90deg, rgba(231,14,14,1) 0%, rgba(165,22,22,1) 66%)",
+        marginRight: "20px",
+        fontSize: "medium",
+        '&:hover': {
+            boxShadow: "5px 5px 25px rgba(0, 0, 0, 0.35)",
+            transform: "scale3d(1.05, 1.05, 1)",
+        }
     }
 })
 
@@ -168,6 +177,30 @@ function FerrariHeader({children}) {
 
                 </Toolbar>
                 <Toolbar>
+                { location.pathname === '/' ?
+                    <Tooltip title="new event">
+                        <Button
+                            size='small'
+                            className={classes.newEventButton}
+                            aria-label="new event"
+                            variant="contained"
+                            startIcon={<AddIcon fontSize="large"/>}
+                            onClick={() => navigate('/event')}>
+                            event
+                        </Button>
+                    </Tooltip>: null }
+                    { location.pathname === '/' ?
+                    <Tooltip title="new itinerary">
+                        <Button
+                            size='small'
+                            className={classes.newEventButton}
+                            aria-label="new itinerary"
+                            variant="contained"
+                            startIcon={<AddIcon fontSize="large"/>}
+                            onClick={() => navigate('/itinerary')}>
+                            itinerary
+                        </Button>
+                    </Tooltip> : null }
                     <Typography className={classes.userName}>
                         {user}
                     </Typography>

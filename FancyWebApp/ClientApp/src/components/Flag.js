@@ -19,7 +19,15 @@ import {
     NL, QA,
     RU,
     SA, SG,
-    US
+    US,
+    MA,
+    ZA,
+    SE,
+    KR,
+    MY,
+    TR,
+    CH,
+    AR
 } from "country-flag-icons/react/3x2";
 import {makeStyles} from "@material-ui/core";
 const useStyles = makeStyles({
@@ -31,6 +39,23 @@ function Flag({country}) {
     const classes = useStyles();
 
     switch (country) {
+        case "Malaysia":
+            return <MY title={country} className={classes.flag}></MY>;
+        case "Switzerland":
+            return <CH title={country} className={classes.flag}></CH>;
+        case "Turkey":
+            return <TR title={country} className={classes.flag}></TR>;
+        case "Argentina":
+            return <AR title={country} className={classes.flag}></AR>;
+        case "Korea":
+            return <KR title={country} className={classes.flag}></KR>;
+        case "Sweden":
+            return <SE title={country} className={classes.flag}></SE>;
+        case "South Africa":
+            return <ZA title={country} className={classes.flag}></ZA>;
+        case "Morocco":
+            return <MA title={country} className={classes.flag}></MA>;
+        case "USA":
         case "United States":
             return <US title={country} className={classes.flag}></US>;
         case "Australia":
@@ -46,6 +71,7 @@ function Flag({country}) {
         case "France":
             return <FR title={country} className={classes.flag}></FR>;
         case "United Kingdom":
+        case "UK":
             return <GB title={country} className={classes.flag}></GB>;
         case "Mexico":
             return <ME title={country} className={classes.flag}></ME>;
@@ -61,6 +87,7 @@ function Flag({country}) {
             return <RU title={country} className={classes.flag}></RU>;
         case "China":
             return <CN title={country} className={classes.flag}></CN>;
+        case "UAE":
         case "United Arab Emirates":
             return <AE title={country} className={classes.flag}></AE>;
         case "Brazil":
@@ -83,4 +110,24 @@ function Flag({country}) {
             return null;
     }
 }
-export default Flag;
+
+const isEuropeanLocation = (country) => {
+    switch (country) {
+        case "Italy":
+        case "Germany":
+        case "Austria":
+        case "Hungary":
+        case "France":
+        case "United Kingdom":
+        case "Belgium":
+        case "Netherlands":
+        case "Monaco":
+        case "Spain":
+        case "Portugal":
+        case "Turkey":
+            return true;
+        default:
+            return false;
+    }
+}
+export {Flag, isEuropeanLocation};
