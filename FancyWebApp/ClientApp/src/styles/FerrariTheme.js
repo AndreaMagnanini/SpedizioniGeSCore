@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
@@ -51,6 +52,13 @@ const theme = createTheme({
             styleOverrides: {
                 paper: {
                     background: "#000"
+                }
+            }
+        },
+        MuiFormControlLabel: {
+            styleOverrides: {
+                typography:{
+                    color: "#eeeeee"
                 }
             }
         }
