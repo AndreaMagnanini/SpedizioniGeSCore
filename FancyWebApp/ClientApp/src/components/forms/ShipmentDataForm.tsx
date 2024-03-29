@@ -87,9 +87,12 @@ const useStyles = makeStyles({
         display: "flex",
         flexDirection: "row",
         gap: "15px",
-        paddingLeft: "10px"
+        paddingLeft: "10px",
+        maxWidth: "550px",
+        textOverflow: "ellipsis",
     },
-    eventSelect:{
+    eventSelectDiv:{
+        flexGrow: 1,
         width: "300px",
         textAlign: "center",
         alignItems:"center",
